@@ -1,0 +1,43 @@
+<view class='container'>
+  <view class='header'>
+    <view class='search-container'>
+      <image class='icon' src='../images/search.png'></image>
+      <input bindconfirm='onConfirm' class='bar' placeholder='书籍名' placeholder-class='in-bar' auto-focus='true' value='{{inputVal}}'></input>
+      <image bindtap='clearBooks' class='cancel-img' src='../images/cancel.png'></image>
+    </view>
+    <view bindtap='onCancelSearch' class='cancel'>取消</view>
+  </view>
+
+  <view class='history' wx:if='{{searchBook == false}}'>
+    <view class='title'>
+      <view class='chunk'></view>
+      <text>历史搜索</text>
+    </view>
+    <view class='tags'>
+      <block wx:for='{{historyWord}}' wx:key=''>
+        <tag bindtapping='onConfirm' class='tag-text' text='{{item}}' />
+      </block>
+    </view>
+    <view class='history hot-search'>
+      <view class='title'>
+        <view class='chunk'></view>
+        <text>热门搜索</text>
+      </view>
+      <view class='tags'>
+        <block wx:for='{{hotList}}' wx:key=''>
+          <tag bindtapping='onConfirm' class='tag-text' text='{{item}}' />
+        </block>
+      </view>
+    </view>
+  </view>
+
+  <!-- 显示搜索书籍 -->
+  <scroll-view class='books-wrap' wx:else>
+    <block wx:for='{{searchBook}}' wx:key='{{item.id}}'>
+      <book class='book' book='{{item}}' />
+    </block>
+  </scroll-view>
+
+  <loading wx:if="{{loadingCenter}}" class='loading-center' />
+
+</view>

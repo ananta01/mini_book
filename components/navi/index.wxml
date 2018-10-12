@@ -1,0 +1,5 @@
+<view class='navi-wrap'>
+  <image bindtap='onLeft' class='icon' src='{{latest ? disLeftSrc : highLeftSrc}}'></image>
+  <text class='title'>{{title}}</text>
+  <image bindtap='onRight' class='icon' src='{{first ? disRightSrc : highRightSrc}}'></image>
+</view>

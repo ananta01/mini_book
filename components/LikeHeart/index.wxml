@@ -1,0 +1,5 @@
+<view class='container' bindtap='onClickLike'>
+  <image class='like-heart' 
+      src='{{curLike ? trueLikeUrl : falseLikeUrl}}'></image>
+  <text class='like-count'>{{count}}</text>
+</view>

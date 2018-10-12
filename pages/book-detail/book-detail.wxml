@@ -1,0 +1,71 @@
+<wxs src='../../util/filter.wxs' module='filter' />
+
+<view class='detail-wrap'>
+  <view class='header'>
+    <image src='{{book.image}}'></image>
+    <text class='title'>{{book.title}}</text>
+    <text class='author'>{{book.author}}</text>
+  </view>
+  <view class='short-container'>
+    <text class='headline'>短评</text>
+    <text class='shadow' wx:if='{{comments == false}}'>还没有短评,快做第一人~</text>
+    <view class='comments-container'>
+      <block wx:for='{{filter.limit(comments, 8)}}' wx:key='content'>
+        <tag text='{{item.content}}'>
+          <text slot="after" class='slot-nums'>{{'+' + item.nums}}</text>
+        </tag>
+      </block>
+    </view>
+  </view>
+  <view class='short-container'>
+    <text class='headline'>内容简介</text>
+    <text decode="{{true}}" class='content'>{{filter.format(book.summary)}}</text>
+  </view>
+  <view class='short-container'>
+    <text class='headline'>书本信息</text>
+    <view class='detail-container'>
+      <view class='vertical desc'>
+        <text>出版色</text>
+        <text>出版年</text>
+        <text>页数</text>
+        <text>定价</text>
+        <text>装帧</text>
+      </view>
+      <view class='vertical'>
+        <text>{{book.publisher}}</text>
+        <text>{{book.pubdate}}</text>
+        <text>{{book.pages}}</text>
+        <text>{{book.price}}</text>
+        <text>{{book.binding}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 评论 -->
+<view class='post-wrap' wx:if='{{!posting}}'>
+  <view bindtap='onPostFake' class='post-fake'>
+    <text>输入短评</text>
+  </view>
+  <view class='like-wrap'>
+    <like-heart bindlike='onLike' class='like' curLike='{{likeStatus}}' count='{{likeCount}}' />
+  </view>
+</view>
+
+<view class='posting-wrap' wx:if='{{posting}}'>
+  <view class='post-header'>
+    <text wx:if='{{comments == true}}'>仅可点击标签+1</text>
+    <text wx:else>暂无标签</text>
+    <text bindtap='onCancelPosting' class='cancel'>取消</text>
+  </view>
+  <view class='comments-container'>
+    <block wx:for='{{filter.limit(comments, 3)}}' wx:key='content'>
+      <tag bindtapping='onPostText' text='{{item.content}}'>
+        <text slot="after" class='slot-nums'>{{'+' + item.nums}}</text>
+      </tag>
+    </block>
+  </view>
+  <input bindconfirm='onPostText' class='post' placeholder='短评最多12个字'></input>
+</view>
+
+<mask wx:if='{{posting}}' bindtap='onCancelPosting' />

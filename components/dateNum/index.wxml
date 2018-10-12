@@ -1,0 +1,10 @@
+<view class='date-wrap'>
+  <view class='num-container'>
+    <text>No.</text>
+    <text class='num-index'>{{curIndex}}</text>
+  </view>
+  <view class='date-container'>
+    <text class='date-month'>{{month}}</text>
+    <text class='date-year'>{{year}}</text>
+  </view>
+</view>

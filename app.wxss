@@ -1,0 +1,5 @@
+page {
+  font-family: "PingFangTC-Thin, Microsoft YaHei, sans-serif";
+  font-size: 32rpx;
+  color: rgb(134, 133, 133);
+}

@@ -1,0 +1,5 @@
+<view hidden='{{hidden}}' class='movie-wrap'>
+  <image class='movie-img' src='{{img}}'></image>
+  <image class='movie-tag' src='../../images/movie@tag.png'></image>
+  <text class='movie-content'>{{content}}</text>
+</view>

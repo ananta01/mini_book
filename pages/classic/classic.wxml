@@ -1,0 +1,17 @@
+<view class='classic-wrap'>
+  <view class='header'>
+    <date-num class='date-num' index='{{classicData.index}}' />
+    <like-heart class='like-heart' bindlike='onClickLike' curLike='{{likeStatus}}' 
+      count='{{likeCount}}' />
+    <img-btn class='share-btn' open-type='share'>
+      <image class='share' slot='img' src='/images/icon/share.png'></image>
+    </img-btn>
+  </view>  
+  <view class='body'>
+    <classic-movie hidden='{{classicData.type != 100}}' img='{{classicData.image}}' content='{{classicData.content}}' />
+    <classic-music wx:if='{{classicData.type == 200}}' img='{{classicData.image}}' content='{{classicData.content}}' src='{{classicData.url}}' />
+    <classic-essay hidden='{{classicData.type != 300}}' img='{{classicData.image}}' content='{{classicData.content}}' />
+    <navi class='navi' title='{{classicData.title}}' first='{{first}}' latest='{{latest}}'
+      bindleft='onNext' bindright='onPrev' />
+  </view> 
+</view>

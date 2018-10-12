@@ -1,0 +1,24 @@
+/* components/dateNum/index.wxss */
+.date-wrap {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  height: 60rpx;
+}
+
+.num-container .num-index {
+  display: inline-block;
+  font-size: 60rpx;
+  line-height: 60rpx;
+  font-weight: 700;
+  padding-right: 18rpx;
+  border-right: 1px solid #000;
+  color: #000;
+}
+
+.date-container {
+  display: flex;
+  flex-direction: column;
+  font-size: 24rpx;
+  margin: -10rpx 0 0 18rpx;
+}

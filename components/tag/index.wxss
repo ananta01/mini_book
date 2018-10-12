@@ -1,0 +1,17 @@
+.tag-wrap {
+  display: inline-block;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 4rpx 12rpx;
+  background: #f5f5f5;
+  color: #666;
+  border-radius: 2px;
+  font-size: 28rpx;
+}
+
+.tag-wrap > text {
+  display: inline-block;
+  height: 40rpx;
+  line-height: 40rpx;
+}

@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "like-heart": "/components/LikeHeart/index",
+    "classic-movie": "/components/classic/movie/index",
+    "classic-music": "/components/classic/music/index",
+    "classic-essay": "/components/classic/essay/index",
+    "date-num": "/components/dateNum/index",
+    "navi": "/components/navi/index",
+    "img-btn": "/components/img-button/index"
+  }
+}

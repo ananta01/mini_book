@@ -1,0 +1,6 @@
+<view class='music-wrap'>
+  <image class='classic-img {{playing ? "rotation": ""}}' src='{{img}}'></image>
+  <image bindtap='onPlay' class='play-img' src='{{!playing ? playSrc : pauseSrc}}'></image>
+  <image class='music-img' src='../../images/music@tag.png'></image>
+  <text class='title'>{{content}}</text>
+</view>

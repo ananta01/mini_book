@@ -1,0 +1,18 @@
+/* components/LikeHeart/index.wxss */
+.container {
+  display: inline-flex;
+  padding: 10rpx;
+}
+
+.like-heart {
+  width: 32rpx;
+  height: 28rpx;
+}
+
+.like-count {
+  position: relative;
+  bottom: 8rpx;
+  left: 8rpx;
+  line-height: 28rpx;
+  color: #bbb;
+}
